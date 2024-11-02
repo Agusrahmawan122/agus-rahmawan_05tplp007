@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard - Sistem Informasi Manajemen Karyawan</title>
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  <nav id="navbar">
+    <div class="logo" id="center">
+      <img src="asset/img/unpam.png" style="width: 50px;" id="text"> 
+      <p id="text" style="color: white; font-size: 1.2em; font-weight: bold;">Agus Rahmawan</p>
+      <button id="menu" onclick="menu()"><img src="asset/img/menu.png"></button>
+    </div>
+    <div class="profil" id="center">
+      <img src="asset/img/admin.png">
+      <div class="text-profil" id="text">
+        <p>Welcome, Agus Rahmawan</p>
+        <p style="font-size: 0.95em; font-weight: bold;">Administrator</p>
+      </div>
+    </div>
+    <div class="dashboard">
+      <a href="index.html" id="center" style="color: grey; font-size: 1em; font-weight: normal;">
+        <img src="asset/img/dashboard.png">
+        <p id="text">Dashboard</p>
+      </a>
+    </div>
+    <div class="menu-lain">
+      <h4 id="text">MENU KARYAWAN</h4>
+      <a href="karyawan.html" id="center">
+        <img src="asset/img/users2.png">
+        <p id="text">Karyawan</p>
+      </a>
+      <a href="jabatan.html" id="center" style="background: #0087ff; color: white; font-size: 1.2em; font-weight: bold;">
+        <img src="asset/img/adduser.png">
+        <p id="text">Jabatan</p>
+      </a>
+      <a href="divisi.html" id="center">
+        <img src="asset/img/adduser2.png">
+        <p id="text">Divisi</p>
+      </a>
+    </div>
+    <div class="menu-lain">
+      <h4 id="text">MENU ABSENSI</h4>
+      <a href="absensi.html" id="center">
+        <img src="asset/img/absent2.png">
+        <p id="text">Absensi</p>
+      </a>
+      <a href="izin.html" id="center">
+        <img src="asset/img/izin2.png">
+        <p id="text">Izin</p>
+      </a>
+      <a href="lembur.html" id="center">
+        <img src="asset/img/izin2.png">
+        <p id="text">Lembur</p>
+      </a>
+    </div>
+    <div class="menu-lain">
+      <h4 id="text">MENU PENGGAJIAN</h4>
+      <a href="index.html" id="center">
+        <img src="asset/img/gaji.png">
+        <p id="text">Slip Gaji</p>
+      </a>
+      <a href="index.html" id="center">
+        <img src="asset/img/print.png">
+        <p id="text">Cetak Slip Gaji</p>
+      </a>
+    </div>
+    <div class="menu-lain">
+      <h4 id="text">MENU LAPORAN</h4>
+      <a href="index.html" id="center">
+        <img src="asset/img/laporan.png">
+        <p id="text">Cetak Laporan</p>
+      </a>
+    </div>
+    <div class="menu-lain">
+      <h4 id="text">MENU ADMIN</h4>
+      <a href="index.html" id="center">
+        <img src="asset/img/pengguna.png">
+        <p id="text">Pengguna</p>
+      </a>
+    </div>
+    <div class="dashboard" style="padding-bottom: 50px;">
+      <a href="index.html" style="background: red; text-align: center; justify-content: center;" id="center">
+        <img src="asset/img/logout.png">
+        <p id="text">Logout</p>
+      </a>
+    </div>
+  </nav>
+
+  <header id="header">
+    <img src="asset/img/user.png">
+  </header>
+
+  <div class="k1" id="k1">
+    <h2>Forms</h2>
+    <a href="index.html"><img src="asset/img/dashboard.png"></a>
+    <img src="asset/img/right.png" style="padding: 0px;">
+    <a href="jabatan.html"><p>Jabatan</p></a>
+    <img src="asset/img/right.png" style="padding: 0px;">
+    <a href="tambahjabatan.html"><p>Tambah Jabatan</p></a>
+  </div>
+
+  <div class="overview" id="overview">
+    <div class="ov1">
+      <p style="color: grey; font-size: 1.2em; padding: 20px 0px;">Tambah Jabatan</p>
+      <form action="#" method="POST">
+        <label for="kode">Kode Jabatan</label>
+        <input type="text" name="kode" id="kode">
+        <label for="jabatan">Jabatan</label>
+        <input type="text" name="jabatan" id="jabatan">
+        <div class="btn">
+          <button style="background: green;">
+            <img src="asset/img/save.png">
+            <p>Simpan</p>
+          </button>
+          <button style="background: red;">
+            <img src="asset/img/batal.png">
+            <p>Batal</p>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+<script type="text/javascript">
+  function menu() {
+    var posting = document.getElementById('navbar');
+    var header = document.getElementById('header');
+    var k1 = document.getElementById('k1');
+    var overview = document.getElementById('overview');
+    const center = document.querySelectorAll('#center');
+    const link = document.querySelectorAll('#text');
+
+    link.forEach(link => {
+      if (link.style.display === 'none') {
+        link.style.display = 'block'; 
+      } else {
+          link.style.display = 'none';
+      }
+    });
+
+    center.forEach(center => {
+      if (center.style.justifyContent === 'center') {
+        center.style.justifyContent = ''; 
+      } else {
+          center.style.justifyContent = 'center';
+      }
+    });
+
+    if (posting.style.width === '100px') {
+        posting.style.width = '300px'; 
+    } else {
+        posting.style.width = '100px';
+    }
+
+    if (header.style.marginLeft === '100px') {
+        header.style.marginLeft = '300px'; 
+    } else {
+        header.style.marginLeft = '100px';
+    }
+
+    if (k1.style.marginLeft === '100px') {
+        k1.style.marginLeft = '300px'; 
+    } else {
+        k1.style.marginLeft = '100px';
+    }
+
+    if (overview.style.marginLeft === '100px') {
+        overview.style.marginLeft = '300px'; 
+    } else {
+        overview.style.marginLeft = '100px';
+    }
+
+  }
+</script>
+</html>
